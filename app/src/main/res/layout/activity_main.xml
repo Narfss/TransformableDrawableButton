@@ -11,7 +11,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_margin="30dp" />
+        android:layout_margin="30dp"/>
 
     <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
         android:layout_width="60dp"

@@ -39,9 +39,11 @@ public class TransformableButton extends Button {
         TypedArray arr = getContext().obtainStyledAttributes(attrs, R.styleable.TransformableButtonAttrs);
         int unCheckDraw = arr.getInt(R.styleable.TransformableButtonAttrs_unCheckDraw, 0);
         int checkDraw = arr.getInt(R.styleable.TransformableButtonAttrs_checkDraw, 1);
+        int strokeColor = arr.getColor(R.styleable.TransformableButtonAttrs_strokeColor, TransformableDrawable.DEF_LINES_COLOR);
+        int backgroundColor = arr.getColor(R.styleable.TransformableButtonAttrs_backgroundColor, TransformableDrawable.DEF_BACKGROUND_COLOR);
 
 
-        transformableDrawable = new TransformableDrawable(context, unCheckDraw, checkDraw, TransformableDrawable.DEF_LINE_WIDTH, TransformableDrawable.DEF_LINES_COLOR, TransformableDrawable.DEF_BACKGROUND_COLOR);
+        transformableDrawable = new TransformableDrawable(context, unCheckDraw, checkDraw, TransformableDrawable.DEF_LINE_WIDTH, strokeColor, backgroundColor);
         if(android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
             setBackgroundDrawable(transformableDrawable);
         } else {

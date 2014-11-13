@@ -20,5 +20,8 @@
             <enum name="arrow_right" value="6" />
         </attr>
 
+        <attr name="strokeColor" format="color"/>
+        <attr name="backgroundColor" format="color"/>
+
     </declare-styleable>
 </resources>

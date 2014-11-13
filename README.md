@@ -12,6 +12,8 @@ you need more explanation?
 ### Attributes ###
 * unCheckDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "plus"
 * checkDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "minus"
+* strokeColor : Color value. Default value dark gray.
+* backgroundColor : Color value. Default value white.
 
 ### Show me the code ###
 
@@ -25,7 +27,9 @@ you need more explanation?
         android:layout_gravity="center"
         android:layout_margin="30dp"
         tdb:unCheckDraw="plus"
-        tdb:checkDraw="x"/>
+        tdb:checkDraw="x"
+        tdb:strokeColor="@android:color/holo_red_dark"
+        tdb:backgroundColor="@android:color/black"/>
 
 ```
 
