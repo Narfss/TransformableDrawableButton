@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MenuCrossDrawable.iml" filepath="$PROJECT_DIR$/MenuCrossDrawable.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TransformableDrawableButton.iml" filepath="$PROJECT_DIR$/TransformableDrawableButton.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

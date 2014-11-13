@@ -1,13 +1,80 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tdw="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="fr.northborders.menucrossdrawable.app.MainActivity">
+    tools:context="com.fmSirvent.TransformableDrawableButton.sample.MainActivity"
+    android:columnCount="3"
+    android:orientation="horizontal">
 
-    <View
-            android:id="@+id/view"
-            android:layout_gravity="center"
-            android:layout_width="60dp"
-            android:layout_height="60dp" />
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp" />
 
-</FrameLayout>
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="x"
+        tdw:checkDraw="arrow_down"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="plus"
+        tdw:checkDraw="x"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="arrow_left"
+        tdw:checkDraw="arrow_right"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="plus"
+        tdw:checkDraw="arrow_right"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="minus"
+        tdw:checkDraw="arrow_down"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="arrow_up"
+        tdw:checkDraw="arrow_down"/>
+
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="minus"
+        tdw:checkDraw="arrow_left"/>
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdw:unCheckDraw="minus"
+        tdw:checkDraw="arrow_right"/>
+</GridLayout>

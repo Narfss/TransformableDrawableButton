@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="TransformableButtonAttrs">
+        <attr name="unCheckDraw">
+            <enum name="plus" value="0" />
+            <enum name="minus" value="1" />
+            <enum name="x" value="2" />
+            <enum name="arrow_down" value="3" />
+            <enum name="arrow_left" value="4" />
+            <enum name="arrow_up" value="5" />
+            <enum name="arrow_right" value="6" />
+        </attr>
+        <attr name="checkDraw">
+            <enum name="plus" value="0" />
+            <enum name="minus" value="1" />
+            <enum name="x" value="2" />
+            <enum name="arrow_down" value="3" />
+            <enum name="arrow_left" value="4" />
+            <enum name="arrow_up" value="5" />
+            <enum name="arrow_right" value="6" />
+        </attr>
+
+    </declare-styleable>
+</resources>
