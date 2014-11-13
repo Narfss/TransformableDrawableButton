@@ -33,6 +33,11 @@ you need more explanation?
 
 ```
 
+## Installing
+
+I'm waiting the maven center answer.
+Until I can publish the gradle solution, please import the [TransformableDrawableButton.aar](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/TransformableDrawableButton.aar) file.
+
 ## Author
 
 Francisco M Sirvent narfss@gmail.com
