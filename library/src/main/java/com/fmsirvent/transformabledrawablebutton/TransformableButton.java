@@ -1,4 +1,4 @@
-package com.fmsirvent.TransformableDrawableButton.library;
+package com.fmsirvent.transformabledrawablebutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -6,7 +6,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.Button;
 
-import fr.northborders.menucrossdrawable.app.R;
 
 /**
  * Created by fmsirvent on 13/11/14.

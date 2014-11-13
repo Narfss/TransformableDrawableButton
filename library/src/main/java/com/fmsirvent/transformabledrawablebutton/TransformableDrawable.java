@@ -1,4 +1,4 @@
-package com.fmsirvent.TransformableDrawableButton.library;
+package com.fmsirvent.transformabledrawablebutton;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -26,12 +26,13 @@ public class TransformableDrawable extends Drawable {
     private static final int ARROW_LEFT_POINTS = 4;
     private static final int ARROW_UP_POINTS = 5;
     private static final int ARROW_RIGHT_POINTS = 6;
+    private static final int CHECK_POINTS = 7;
 
     private Paint mLinePaint;
     private Paint mBackgroundPaint;
 
     private float[] mPoints = new float[8];
-    private float[][] mPointsDraw = new float[7][8];
+    private float[][] mPointsDraw = new float[8][8];
     private final RectF mBounds = new RectF();
 
     private int mStrokeWidth = DEF_LINE_WIDTH;
@@ -87,6 +88,14 @@ public class TransformableDrawable extends Drawable {
     }
 
     private void setUpMenuLines(){
+
+        //ABCDE
+        //FGHIJ
+        //KLMNO
+        //PQRST
+        //UVWXY
+
+
         //Plus points
         mPointsDraw[PLUS_POINTS][0] = mBounds.centerX();
         mPointsDraw[PLUS_POINTS][1] = mBounds.top;
@@ -157,6 +166,17 @@ public class TransformableDrawable extends Drawable {
         mPointsDraw[ARROW_RIGHT_POINTS][5] = mBounds.bottom;
         mPointsDraw[ARROW_RIGHT_POINTS][6] = mBounds.right;
         mPointsDraw[ARROW_RIGHT_POINTS][7] = mBounds.centerY();
+
+
+        //Check points
+        mPointsDraw[CHECK_POINTS][0] = mBounds.left;
+        mPointsDraw[CHECK_POINTS][1] = mBounds.centerY();
+        mPointsDraw[CHECK_POINTS][2] = mBounds.centerX();
+        mPointsDraw[CHECK_POINTS][3] = mBounds.bottom;
+        mPointsDraw[CHECK_POINTS][4] = mBounds.right;
+        mPointsDraw[CHECK_POINTS][5] = mBounds.top;
+        mPointsDraw[CHECK_POINTS][6] = mBounds.centerY();
+        mPointsDraw[CHECK_POINTS][7] = mBounds.bottom;
 
         //Transitional points
         mPoints[0] = mPointsDraw[unCheckDraw][0];

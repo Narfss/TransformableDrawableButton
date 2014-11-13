@@ -16,11 +16,18 @@
         <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-05ce2351757037b316fcb6dfe5738cd11fc6e1ab.jar" />
     </item>
     <item
-        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/libs/nineoldandroids-2.4.0.jar"
+        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/exploded-aar/TransformableDrawableButton/library/unspecified/libs/nineoldandroids-2.4.0.jar"
         jumboMode="false"
         revision="19.1.0"
         sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-c4d6342d44f9b351c3f68db373ce349cab09cc31.jar" />
+        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-4b6d6334987ddfc57b2968b5d5db66425c01cb7c.jar" />
+    </item>
+    <item
+        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/exploded-aar/TransformableDrawableButton/library/unspecified/classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="0384ca6c427fef79529e2eec1328b48d80f8d096">
+        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/classes-5878ff22f042ec1a04e908ad99dac082e589da40.jar" />
     </item>
 
 </items>

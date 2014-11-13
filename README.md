@@ -10,8 +10,8 @@ you need more explanation?
 
 
 ### Attributes ###
-* unCheckDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "plus"
-* checkDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "minus"
+* unCheckDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"
+* checkDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
 * strokeColor : Color value. Default value dark gray.
 * backgroundColor : Color value. Default value white.
 
@@ -21,7 +21,7 @@ you need more explanation?
 #!java
     //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
 
-    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+    <com.fmsirvent.transformabledrawablebutton.TransformableButton
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="center"

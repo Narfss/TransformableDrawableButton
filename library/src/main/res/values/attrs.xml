@@ -9,6 +9,7 @@
             <enum name="arrow_left" value="4" />
             <enum name="arrow_up" value="5" />
             <enum name="arrow_right" value="6" />
+            <enum name="check" value="7" />
         </attr>
         <attr name="checkDraw">
             <enum name="plus" value="0" />
@@ -18,6 +19,7 @@
             <enum name="arrow_left" value="4" />
             <enum name="arrow_up" value="5" />
             <enum name="arrow_right" value="6" />
+            <enum name="check" value="7" />
         </attr>
 
         <attr name="strokeColor" format="color"/>

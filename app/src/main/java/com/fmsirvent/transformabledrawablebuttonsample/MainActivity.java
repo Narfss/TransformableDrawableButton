@@ -1,14 +1,9 @@
-package come.fmSirvent.TransformableDrawableButton.sample;
+package com.fmsirvent.transformabledrawablebuttonsample;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
 
-import com.fmsirvent.TransformableDrawableButton.library.TransformableDrawable;
-
-import fr.northborders.menucrossdrawable.app.R;
-
+import com.fmsirvent.transformabledrawablebuttonsample.R;
 
 public class MainActivity extends Activity {
 
