@@ -1,27 +1,44 @@
-HamburgerMenuDrawable
+TransformableDrawableButton
 =================
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-HamburgerMenuDrawable-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/915)
+Animated button with transitions between symbols.
 
-Recently I came accross some articles on Dribble which were showing some animated menu buttons, commonly called Burger buttons.
-An example of this is illustrated on this page: https://dribbble.com/shots/1654493-Hamburger-Icon-in-Framer?list=users&offset=1
-
-After a bit of search and help of Flavien Laurent and his project TickPlusDrawable (https://github.com/flavienlaurent/tickplusdrawable),
-I found a simple solution involving subclassing the Drawable class. Then we just have to play with AnimatorSet and ObjectAnimator
-to animate the lines and make a cross and a hamburger appear successively. Here is the result:
-
-![](https://raw.githubusercontent.com/Tibolte/MenuCrossDrawable/master/buttoncrossmenudemosvg.gif)
+you need more explanation?
 
 
-##Android
+![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/buttoncrossmenudemosvg.gif)
 
-Tested on APIs 2.2+, requires the nineOldAndroid jar file included
+
+### Attributes ###
+* unCheckDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "plus"
+* checkDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right". Default value "minus"
+
+### Show me the code ###
+
+```
+#!java
+    //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
+
+    <com.fmsirvent.TransformableDrawableButton.library.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdb:unCheckDraw="plus"
+        tdb:checkDraw="x"/>
+
+```
 
 ## Author
 
+Francisco M Sirvent narfss@gmail.com
+Linkedin: es.linkedin.com/in/fmsirvent/
+
+
+Based on HamburgerMenuDrawable, by:
 Thibault Guégan, thibault.guegan@gmail.com
 Linkedin: https://www.linkedin.com/profile/view?id=93515047
 
 ## License
 
-HamburgerMenuDrawable is available under the MIT license. See the LICENSE file for more info.
+TransformableDrawableButton is available under the MIT license. See the LICENSE file for more info.
