@@ -5,11 +5,13 @@ Animated button with transitions between symbols.
 
 you need more explanation?
 
-Round buttons Example
+Round buttons Example.
+
 ![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_round_buttons_example.gif)
 
 Drawable on a side of button.
-![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif.gif)
+
+![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif)
 
 
 ### Attributes ###
