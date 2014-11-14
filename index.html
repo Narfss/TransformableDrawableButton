@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Transformabledrawablebutton by Narfss</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Transformabledrawablebutton</h1>
+          <h2>Interactive left menu button</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Narfss/TransformableDrawableButton/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Narfss/TransformableDrawableButton/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Narfss/TransformableDrawableButton" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="transformabledrawablebutton" class="anchor" href="#transformabledrawablebutton" aria-hidden="true"><span class="octicon octicon-link"></span></a>TransformableDrawableButton</h1>
+
+<p>Animated button with transitions between symbols.</p>
+
+<p>you need more explanation?</p>
+
+<p>Round buttons Example.</p>
+
+<p><img src="https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_round_buttons_example.gif" alt=""></p>
+
+<p>Drawable on a side of button.</p>
+
+<p><img src="https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif" alt=""></p>
+
+<h3>
+<a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
+
+<ul>
+<li>
+<strong>unCheckDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"</li>
+<li>
+<strong>checkDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"</li>
+<li>
+<strong>strokeColor</strong> : Color value. Default value dark gray.</li>
+<li>
+<strong>backgroundColor</strong> : Color value. Default value white.</li>
+<li>
+<strong>drawablePosition</strong> : Values "background", "left", "top", "right", "bottom". Default value "background". Warning: Current in development.</li>
+</ul>
+
+<h3>
+<a id="show-me-the-code" class="anchor" href="#show-me-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show me the code</h3>
+
+<pre><code>#!java
+    //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
+
+    &lt;com.fmsirvent.transformabledrawablebutton.TransformableButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        tdb:unCheckDraw="plus"
+        tdb:checkDraw="x"
+        tdb:strokeColor="@android:color/holo_red_dark"
+        tdb:backgroundColor="@android:color/black"/&gt;
+
+</code></pre>
+
+<h2>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h2>
+
+<p>I'm waiting the maven center answer.
+Until I can publish the gradle solution, please import the <a href="https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/TransformableDrawableButton.aar">TransformableDrawableButton.aar</a> file.</p>
+
+<h2>
+<a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Francisco M Sirvent <a href="mailto:narfss@gmail.com">narfss@gmail.com</a>
+Linkedin: <a href="https://es.linkedin.com/in/fmsirvent/">https://es.linkedin.com/in/fmsirvent/</a></p>
+
+<p>Based on HamburgerMenuDrawable, by:
+Thibault Guégan, <a href="mailto:thibault.guegan@gmail.com">thibault.guegan@gmail.com</a>
+Linkedin: <a href="https://www.linkedin.com/profile/view?id=93515047">https://www.linkedin.com/profile/view?id=93515047</a></p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>TransformableDrawableButton is available under the MIT license. See the LICENSE file for more info.</p>
+        </section>
+
+        <footer>
+          Transformabledrawablebutton is maintained by <a href="https://github.com/Narfss">Narfss</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
