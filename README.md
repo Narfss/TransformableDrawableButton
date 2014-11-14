@@ -5,15 +5,19 @@ Animated button with transitions between symbols.
 
 you need more explanation?
 
+Round buttons Example
+![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_round_buttons_example.gif)
 
-![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/buttoncrossmenudemosvg.gif)
+Drawable on a side of button.
+![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif.gif)
 
 
 ### Attributes ###
-* unCheckDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"
-* checkDraw : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
-* strokeColor : Color value. Default value dark gray.
-* backgroundColor : Color value. Default value white.
+* **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"
+* **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
+* **strokeColor** : Color value. Default value dark gray.
+* **backgroundColor** : Color value. Default value white.
+* **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background". Warning: Current in development.
 
 ### Show me the code ###
 

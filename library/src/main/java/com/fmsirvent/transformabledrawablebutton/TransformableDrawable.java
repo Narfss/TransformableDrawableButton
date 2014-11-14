@@ -11,6 +11,9 @@ import com.nineoldandroids.animation.AnimatorSet;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.util.Property;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by thibaultguegan on 05/09/2014.
  */
@@ -43,6 +46,7 @@ public class TransformableDrawable extends Drawable {
     private Context context;
     private final int unCheckDraw;
     private final int checkDraw;
+    private BackgroundPosition positionDrawable = BackgroundPosition.BACKGROUND;
 
     public TransformableDrawable(Context context){
         this(context, PLUS_POINTS, MINUS_POINTS, DEF_LINE_WIDTH, DEF_LINES_COLOR, DEF_BACKGROUND_COLOR);
@@ -73,19 +77,42 @@ public class TransformableDrawable extends Drawable {
         mBackgroundPaint.setColor(mBackgroundColor);
     }
 
+
     @Override
     protected void onBoundsChange(Rect bounds) {
         super.onBoundsChange(bounds);
 
         float padding = bounds.width()/4;
 
-        mBounds.left = bounds.left + padding;
-        mBounds.right = bounds.right - padding;
-        mBounds.top = bounds.top + padding;
-        mBounds.bottom = bounds.bottom - padding;
+        long deltaX = 0;
+        long deltaY = 0;
+        switch (positionDrawable) {
+            case BACKGROUND:
+                break;
+            case LEFT:
+                deltaX = bounds.height();
+                deltaY = bounds.height() / 2;
+                break;
+            case TOP:
+                deltaY = bounds.height();
+                deltaX = bounds.height() / 2;
+                break;
+            case RIGHT:
+                deltaY = bounds.height() / 2;
+                break;
+            case BOTTOM:
+                deltaX = bounds.height() / 2;
+                break;
+        }
+
+        mBounds.left = bounds.left + padding - deltaX;
+        mBounds.right = bounds.right - padding - deltaX;
+        mBounds.top = bounds.top + padding - deltaY;
+        mBounds.bottom = bounds.bottom - padding - deltaY;
 
         setUpMenuLines();
     }
+
 
     private void setUpMenuLines(){
 
@@ -175,7 +202,7 @@ public class TransformableDrawable extends Drawable {
         mPointsDraw[CHECK_POINTS][3] = mBounds.bottom;
         mPointsDraw[CHECK_POINTS][4] = mBounds.right;
         mPointsDraw[CHECK_POINTS][5] = mBounds.top;
-        mPointsDraw[CHECK_POINTS][6] = mBounds.centerY();
+        mPointsDraw[CHECK_POINTS][6] = mBounds.centerX();
         mPointsDraw[CHECK_POINTS][7] = mBounds.bottom;
 
         //Transitional points
@@ -284,6 +311,31 @@ public class TransformableDrawable extends Drawable {
                 ObjectAnimator.ofFloat(this, mPropertyPointDY, getPoint(7, enable))
         );
         animatorSet.setDuration(animated ? ANIMATION_DURATION : 0).start();
+    }
+
+    public void setPositionDrawable(BackgroundPosition positionDrawable) {
+        this.positionDrawable = positionDrawable;
+    }
+
+    public BackgroundPosition getPositionDrawable() {
+        return positionDrawable;
+    }
+
+    public enum BackgroundPosition {
+        BACKGROUND, LEFT, TOP, RIGHT, BOTTOM;
+
+        public int getNum() {
+            return getBackgroundPositions().indexOf(this);
+        }
+
+        private static List<BackgroundPosition> getBackgroundPositions() {
+            return Arrays.asList(BACKGROUND, LEFT, TOP, RIGHT, BOTTOM);
+        }
+
+
+        public static BackgroundPosition enumOf(int drawablePosition) {
+            return getBackgroundPositions().get(drawablePosition);
+        }
     }
 
     private abstract class PointProperty extends Property<TransformableDrawable, Float> {

@@ -21,6 +21,13 @@
             <enum name="arrow_right" value="6" />
             <enum name="check" value="7" />
         </attr>
+        <attr name="drawablePosition">
+            <enum name="background" value="0" />
+            <enum name="left" value="1" />
+            <enum name="top" value="2" />
+            <enum name="right" value="3" />
+            <enum name="bottom" value="4" />
+        </attr>
 
         <attr name="strokeColor" format="color"/>
         <attr name="backgroundColor" format="color"/>
