@@ -1,7 +1,29 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.14.1'
+    }
+}
+
 apply plugin: 'com.android.application'
 
 repositories {
     mavenCentral()
+
+    // for using SNAPSHOT
+    //maven {
+    //    url uri('https://oss.sonatype.org/content/repositories/snapshots/')
+    //}
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile project(':library')
+
+    // for using SNAPSHOT
+    //compile "com.github.ksoichiro:android-observablescrollview:$VERSION_NAME"
 }
 
 android {
@@ -9,21 +31,21 @@ android {
     buildToolsVersion "19.1.0"
 
     defaultConfig {
-        minSdkVersion 14
+        applicationId "com.fmsirvent.transformabledrawablebutton.app"
+        minSdkVersion 8
         targetSdkVersion 19
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:19.+'
-    compile project(':library')
+    lintOptions {
+        abortOnError false
+    }
 }

@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
+<pre-dex-items>
 
     <item
-        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
+        dex="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/library-2.4.0-c3f2595342880c122a507310078790514a744644.jar"
+        jar="/home/narf/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
-        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/classes-2c8f3f6e838a984d20a50da4f60e60c41964819a.jar" />
-    </item>
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb"/>
     <item
-        jar="/Users/fmsirvent/android-sdks/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        dex="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-779a187975858ff608b87026bf8b0a0ca1a38146.jar"
+        jar="/home/narf/android-sdk-linux/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-05ce2351757037b316fcb6dfe5738cd11fc6e1ab.jar" />
-    </item>
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
     <item
-        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/exploded-aar/TransformableDrawableButton/library/unspecified/libs/nineoldandroids-2.4.0.jar"
+        dex="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/classes-a196088676edc1afdff2d3a33be12224a6bb7580.jar"
+        jar="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/exploded-aar/com.fmsirvent/library/1.0.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="59f19e43354d32de831379c23ce03bb259a4c2b7">
-        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/nineoldandroids-2.4.0-4b6d6334987ddfc57b2968b5d5db66425c01cb7c.jar" />
-    </item>
+        sha1="dd892af79adf22ea35c8b4791cb32b6bdedc9187"/>
     <item
-        jar="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/exploded-aar/TransformableDrawableButton/library/unspecified/classes.jar"
+        dex="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/classes-0ca4db9e7a8031b775db46b4ef077c5160dc14f2.jar"
+        jar="/home/narf/AndroidStudioProjects/TransformableDrawableButton/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/19.1.0/classes.jar"
         jumboMode="false"
         revision="19.1.0"
-        sha1="b87c7a6df471fa9a44a984d66ab59a1babb97101">
-        <dex dex="/Users/fmsirvent/Documents/TransformableDrawableButton/app/build/intermediates/pre-dexed/debug/classes-5878ff22f042ec1a04e908ad99dac082e589da40.jar" />
-    </item>
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
 
-</items>
+</pre-dex-items>
