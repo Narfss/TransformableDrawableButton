@@ -17,21 +17,21 @@ public class TransformableButton extends Button {
 
     public TransformableButton(Context context) {
         super(context);
-        if (!isInEditMode()){
+        if (!isInEditMode()) {
             init(context, null, 0);
         }
     }
 
     public TransformableButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        if (!isInEditMode()){
+        if (!isInEditMode()) {
             init(context, attrs, 0);
         }
     }
 
     public TransformableButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        if (!isInEditMode()){
+        if (!isInEditMode()) {
             init(context, attrs, defStyle);
         }
     }
@@ -50,60 +50,50 @@ public class TransformableButton extends Button {
         backgroundPosition = TransformableDrawable.BackgroundPosition.enumOf(drawablePosition);
 
         transformableDrawable.setPositionDrawable(backgroundPosition);
-        switch (backgroundPosition) {
-            case BACKGROUND:
-                if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                    setBackgroundDrawable(transformableDrawable);
-                } else {
-                    setBackground(transformableDrawable);
-                }
-                break;
-            case LEFT:
-                setCompoundDrawables(transformableDrawable, null, null, null);
-                break;
-            case TOP:
-                setCompoundDrawables(null, transformableDrawable, null, null);
-                break;
-            case RIGHT:
-                setCompoundDrawables(null, null, transformableDrawable, null);
-                break;
-            case BOTTOM:
-                setCompoundDrawables(null, null, null, transformableDrawable);
-                break;
-        }
-
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
-                int min = (backgroundPosition == TransformableDrawable.BackgroundPosition.BACKGROUND) ? Math.min(getHeight(), getWidth()) : Math.min(getHeight(), getWidth())/2;
-                transformableDrawable.setBounds(0, 0, min, min);
+                int height = getHeight();
+                int width = getWidth();
+                int min = (backgroundPosition == TransformableDrawable.BackgroundPosition.BACKGROUND) ? Math.min(height, width) : Math.min(height, width) / 2;
+
+                switch (backgroundPosition) {
+                    case BACKGROUND:
+                        transformableDrawable.setBounds(0, 0, min, min);
+                        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
+                            setBackgroundDrawable(transformableDrawable);
+                        } else {
+                            setBackground(transformableDrawable);
+                        }
+                        break;
+                    case LEFT:
+                        transformableDrawable.setBounds(min, min/2, min*2, min*3/2);
+                        setCompoundDrawables(transformableDrawable, null, null, null);
+                        break;
+                    case TOP:
+                        transformableDrawable.setBounds((width-min)/2, min, ((width-min)/2) + min,  min*2);
+                        setCompoundDrawables(null, transformableDrawable, null, null);
+                        break;
+                    case RIGHT:
+                        transformableDrawable.setBounds(0, min/2, min, min*3/2);
+                        setCompoundDrawables(null, null, transformableDrawable, null);
+                        break;
+                    case BOTTOM:
+                        transformableDrawable.setBounds((width-min)/2, (height) / 2 - min, ((width-min)/2) + min,  (height / 2) - min + min);
+                        setCompoundDrawables(null, null, null, transformableDrawable);
+                        break;
+                }
             }
         });
     }
 
-
-
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int min = Math.min(widthMeasureSpec, heightMeasureSpec);
-        int drawMin = Math.min(getHeight(), getWidth())*2/3;
         switch (backgroundPosition) {
             case BACKGROUND:
                 super.onMeasure(min, min);
-            case LEFT:
-                setPadding(getPaddingLeft() + drawMin/3, getPaddingTop(), getPaddingRight(), getPaddingBottom());
-                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-                break;
-            case TOP:
-                setPadding(getPaddingLeft(), getPaddingTop() + drawMin/2, getPaddingRight(), getPaddingBottom());
-                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-                break;
-            case RIGHT:
-                setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight() + drawMin/3, getPaddingBottom());
-                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-                break;
-            case BOTTOM:
-                setPadding(getPaddingLeft(), getPaddingTop(), getPaddingRight(), getPaddingBottom() + drawMin/2);
+            default:
                 super.onMeasure(widthMeasureSpec, heightMeasureSpec);
                 break;
         }

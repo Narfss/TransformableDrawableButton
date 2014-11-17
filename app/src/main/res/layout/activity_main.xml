@@ -21,6 +21,17 @@
             tdb:backgroundColor="@android:color/transparent"
             tdb:drawablePosition="left" />
 
+        <com.fmsirvent.transformabledrawablebutton.TransformableButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:text="Or this side"
+            tdb:checkDraw="arrow_right"
+            tdb:unCheckDraw="arrow_down"
+            tdb:strokeColor="@android:color/white"
+            tdb:backgroundColor="@android:color/transparent"
+            tdb:drawablePosition="right" />
 
         <com.fmsirvent.transformabledrawablebutton.TransformableButton
             android:layout_width="wrap_content"
@@ -144,5 +155,6 @@
                 tdb:unCheckDraw="plus" />
 
         </GridLayout>
+
     </LinearLayout>
 </ScrollView>

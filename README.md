@@ -19,7 +19,7 @@ Drawable on a side of button.
 * **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
 * **strokeColor** : Color value. Default value dark gray.
 * **backgroundColor** : Color value. Default value white.
-* **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background". Warning: Current in development.
+* **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background".
 
 ### Show me the code ###
 
@@ -38,11 +38,6 @@ Drawable on a side of button.
         tdb:backgroundColor="@android:color/black"/>
 
 ```
-
-## Installing
-
-I'm waiting the maven center answer.
-Until I can publish the gradle solution, please import the [TransformableDrawableButton.aar](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/TransformableDrawableButton.aar) file.
 
 ## Author
 
