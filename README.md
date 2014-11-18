@@ -14,6 +14,31 @@ Drawable on a side of button.
 ![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif)
 
 
+### Show me the code ###
+
+Gradle dependencies:
+
+```groovy
+compile 'com.fmsirvent:transformabledrawablebutton:1.0.0'
+```
+
+Code in layout:
+
+```xml
+<!-- add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
+
+<com.fmsirvent.transformabledrawablebutton.TransformableButton
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_gravity="center"
+    android:layout_margin="30dp"
+    tdb:unCheckDraw="plus"
+    tdb:checkDraw="x"
+    tdb:strokeColor="@android:color/holo_red_dark"
+    tdb:backgroundColor="@android:color/black"/>
+```
+
+
 ### Attributes ###
 * **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"
 * **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
@@ -21,23 +46,10 @@ Drawable on a side of button.
 * **backgroundColor** : Color value. Default value white.
 * **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background".
 
-### Show me the code ###
-
-```
-#!java
-    //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
-
-    <com.fmsirvent.transformabledrawablebutton.TransformableButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        tdb:unCheckDraw="plus"
-        tdb:checkDraw="x"
-        tdb:strokeColor="@android:color/holo_red_dark"
-        tdb:backgroundColor="@android:color/black"/>
-
-```
+### TODO ###
+* Check function
+* Check listener
+* Improve animations.
 
 ## Author
 
