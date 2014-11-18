@@ -54,6 +54,27 @@
 <p><img src="https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif" alt=""></p>
 
 <h3>
+<a id="show-me-the-code" class="anchor" href="#show-me-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show me the code</h3>
+
+<p>Gradle dependencies:</p>
+
+<div class="highlight highlight-groovy"><pre>compile <span class="pl-s1"><span class="pl-pds">'</span>com.fmsirvent:transformabledrawablebutton:1.0.0<span class="pl-pds">'</span></span></pre></div>
+
+<p>Code in layout:</p>
+
+<div class="highlight highlight-xml"><pre><span class="pl-c"><span class="pl-pdc">&lt;!--</span> add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" <span class="pl-pdc">--&gt;</span></span>
+
+&lt;<span class="pl-ent">com</span>.fmsirvent.transformabledrawablebutton.TransformableButton
+    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_width</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_height</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_gravity</span>=<span class="pl-s1"><span class="pl-pds">"</span>center<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_margin</span>=<span class="pl-s1"><span class="pl-pds">"</span>30dp<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">unCheckDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>plus<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">checkDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">strokeColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/holo_red_dark<span class="pl-pds">"</span></span>
+    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">backgroundColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/black<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<h3>
 <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
 
 <ul>
@@ -70,22 +91,13 @@
 </ul>
 
 <h3>
-<a id="show-me-the-code" class="anchor" href="#show-me-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show me the code</h3>
+<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
 
-<pre><code>#!java
-    //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
-
-    &lt;com.fmsirvent.transformabledrawablebutton.TransformableButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        tdb:unCheckDraw="plus"
-        tdb:checkDraw="x"
-        tdb:strokeColor="@android:color/holo_red_dark"
-        tdb:backgroundColor="@android:color/black"/&gt;
-
-</code></pre>
+<ul>
+<li>Check function</li>
+<li>Check listener</li>
+<li>Improve animations.</li>
+</ul>
 
 <h2>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span class="octicon octicon-link"></span></a>Author</h2>
