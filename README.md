@@ -15,17 +15,34 @@ Drawable on a side of button.
 
 
 ### Attributes ###
-* **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"
-* **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"
+* **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "plus"
+* **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "minus"
 * **strokeColor** : Color value. Default value dark gray.
 * **backgroundColor** : Color value. Default value white.
 * **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background".
 
+### Functions ###
+* **Constructor** TransformableButton(Context context, Draw unCheckDraw, Draw checkDraw, int strokeColor, int backgroundColor, PositionDraw positionDraw)
+    unCheckDraw: Draw on uncheck status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.PLUS
+    strokeColor: Draw on check status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.MINUS
+    backgroundColor: Color of circle background. Example Color.RED
+    positionDraw: Color of lines. Example Color.RED
+* **setOnCheckedChangeListener** void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener)
+    onCheckedChangeListener: Listener of status changes, use TransformableButton.OnCheckedChangeListener.
+* **isChecked** Boolean isChecked()
+    Check the status button.
+    return: status of button (check = true, uncheck = false).
+* **setChecked** void setChecked(boolean checked, boolean animated)
+    Changes the status button.
+    checked: Status to set (check = true, uncheck = false)
+    animated: Show animation of change. (true show animation)
+
 ### Show me the code ###
 
+Adding widget in a layout:
 ```
-#!java
-    //add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto"
+#!xml
+    <!--add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
 
     <com.fmsirvent.transformabledrawablebutton.TransformableButton
         android:layout_width="60dp"
@@ -36,6 +53,14 @@ Drawable on a side of button.
         tdb:checkDraw="x"
         tdb:strokeColor="@android:color/holo_red_dark"
         tdb:backgroundColor="@android:color/black"/>
+
+```
+
+Creating widget programmatic way:
+```
+#!java
+
+        TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
 
 ```
 

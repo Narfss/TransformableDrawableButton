@@ -5,21 +5,31 @@
             <enum name="plus" value="0" />
             <enum name="minus" value="1" />
             <enum name="x" value="2" />
-            <enum name="arrow_down" value="3" />
-            <enum name="arrow_left" value="4" />
-            <enum name="arrow_up" value="5" />
-            <enum name="arrow_right" value="6" />
+            <enum name="angle_down" value="3" />
+            <enum name="angle_left" value="4" />
+            <enum name="angle_up" value="5" />
+            <enum name="angle_right" value="6" />
             <enum name="check" value="7" />
+            <enum name="arrow_down" value="8" />
+            <enum name="arrow_left" value="9" />
+            <enum name="arrow_up" value="10" />
+            <enum name="arrow_right" value="11" />
+            <enum name="menu" value="12" />
         </attr>
         <attr name="checkDraw">
             <enum name="plus" value="0" />
             <enum name="minus" value="1" />
             <enum name="x" value="2" />
-            <enum name="arrow_down" value="3" />
-            <enum name="arrow_left" value="4" />
-            <enum name="arrow_up" value="5" />
-            <enum name="arrow_right" value="6" />
+            <enum name="angle_down" value="3" />
+            <enum name="angle_left" value="4" />
+            <enum name="angle_up" value="5" />
+            <enum name="angle_right" value="6" />
             <enum name="check" value="7" />
+            <enum name="arrow_down" value="8" />
+            <enum name="arrow_left" value="9" />
+            <enum name="arrow_up" value="10" />
+            <enum name="arrow_right" value="11" />
+            <enum name="menu" value="12" />
         </attr>
         <attr name="drawablePosition">
             <enum name="background" value="0" />

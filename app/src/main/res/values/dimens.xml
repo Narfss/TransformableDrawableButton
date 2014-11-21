@@ -2,4 +2,7 @@
 
 <resources>
     <dimen name="stroke_width">4dp</dimen>
+    <dimen name="button_size">38dp</dimen>
+    <dimen name="button_margin">6dp</dimen>
+    <dimen name="button_margin_large">10dp</dimen>
 </resources>

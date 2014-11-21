@@ -9,152 +9,242 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.fmsirvent.transformabledrawablebutton.TransformableButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:text="Look this"
-            tdb:checkDraw="arrow_right"
-            tdb:unCheckDraw="arrow_down"
-            tdb:strokeColor="@android:color/white"
-            tdb:backgroundColor="@android:color/transparent"
-            tdb:drawablePosition="left" />
-
-        <com.fmsirvent.transformabledrawablebutton.TransformableButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:text="Or this side"
-            tdb:checkDraw="arrow_right"
-            tdb:unCheckDraw="arrow_down"
-            tdb:strokeColor="@android:color/white"
-            tdb:backgroundColor="@android:color/transparent"
-            tdb:drawablePosition="right" />
-
-        <com.fmsirvent.transformabledrawablebutton.TransformableButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:text="Add"
-            tdb:strokeColor="@android:color/white"
-            tdb:backgroundColor="@android:color/transparent"
-            tdb:drawablePosition="top" />
-
-        <com.fmsirvent.transformabledrawablebutton.TransformableButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="30dp"
-            android:text="Check"
-            tdb:checkDraw="check"
-            tdb:unCheckDraw="x"
-            tdb:strokeColor="@android:color/white"
-            tdb:backgroundColor="@android:color/transparent"
-            tdb:drawablePosition="bottom" />
-
-        <GridLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="3"
-            android:orientation="horizontal">
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/text_intro"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/explain_circle"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/common_examples"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/programaly_added"
+            style="@style/layout_horizontal_wide_center">
+
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/layout_horizontal_wide_center">
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp" />
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="check" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp" />
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="x" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
+                style="@style/round_button"
+                tdb:checkDraw="x"
+                tdb:unCheckDraw="check" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/layout_horizontal_wide_center">
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="arrow_left"
+                tdb:unCheckDraw="arrow_right" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="arrow_up"
+                tdb:unCheckDraw="arrow_down" />
+
+        </LinearLayout>
+
+        <LinearLayout style="@style/layout_horizontal_wide_center">
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="arrow_left"
+                tdb:unCheckDraw="x" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="arrow_up"
+                tdb:unCheckDraw="x" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
                 tdb:checkDraw="arrow_down"
                 tdb:unCheckDraw="x" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="x"
-                tdb:unCheckDraw="plus" />
+                style="@style/round_button"
+                tdb:checkDraw="arrow_right"
+                tdb:unCheckDraw="x" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/other_symbols"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout style="@style/layout_horizontal_wide_center">
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="arrow_right"
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="minus" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="x" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="arrow_down" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
                 tdb:unCheckDraw="arrow_left" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="arrow_right"
-                tdb:unCheckDraw="plus" />
-
-            <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="arrow_down"
-                tdb:unCheckDraw="minus" />
-
-            <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="arrow_down"
+                style="@style/round_button"
+                tdb:checkDraw="plus"
                 tdb:unCheckDraw="arrow_up" />
 
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="arrow_right" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/layout_horizontal_wide_center">
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="check"
-                tdb:unCheckDraw="minus" />
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="check" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="angle_down" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="angle_left" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="angle_right" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="plus"
+                tdb:unCheckDraw="angle_down" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/round_button"
+                tdb:checkDraw="x"
+                tdb:unCheckDraw="menu" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:text="@string/button_sides"
+            android:textColor="@android:color/white" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/large_button"
+                android:text="Look this"
+                tdb:backgroundColor="@android:color/transparent"
                 tdb:checkDraw="arrow_right"
-                tdb:unCheckDraw="minus" />
+                tdb:drawablePosition="left"
+                tdb:strokeColor="@android:color/white"
+                tdb:unCheckDraw="arrow_down" />
 
             <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
-                tdb:checkDraw="check"
-                tdb:unCheckDraw="x" />
-
-            <com.fmsirvent.transformabledrawablebutton.TransformableButton
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="30dp"
+                style="@style/large_button"
+                android:text="Or this side"
+                tdb:backgroundColor="@android:color/transparent"
                 tdb:checkDraw="arrow_right"
+                tdb:drawablePosition="right"
+                tdb:strokeColor="@android:color/white"
+                tdb:unCheckDraw="arrow_down" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/large_button"
+                android:text="Add"
+                tdb:backgroundColor="@android:color/transparent"
+                tdb:drawablePosition="top"
+                tdb:strokeColor="@android:color/white" />
+
+            <com.fmsirvent.transformabledrawablebutton.TransformableButton
+                style="@style/large_button"
+                android:text="Check"
+                tdb:backgroundColor="@android:color/transparent"
+                tdb:checkDraw="check"
+                tdb:drawablePosition="bottom"
+                tdb:strokeColor="@android:color/white"
                 tdb:unCheckDraw="plus" />
+        </LinearLayout>
 
-        </GridLayout>
+        <TextView
+            android:id="@+id/thanks_testing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/button_margin_large"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
 
     </LinearLayout>
 </ScrollView>

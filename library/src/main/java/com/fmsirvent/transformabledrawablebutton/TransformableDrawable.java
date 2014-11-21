@@ -20,27 +20,36 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Created by thibaultguegan on 05/09/2014.
+ * Created by Narfss on 21/Nov/2024
+ *
+ * Original by thibaultguegan on 05/09/2014.
  */
 public class TransformableDrawable extends Drawable {
+
     private static final long ANIMATION_DURATION = 150;
     public static final int DEF_LINES_COLOR = Color.DKGRAY;
     public static final int DEF_BACKGROUND_COLOR = Color.WHITE;
     public static final int DEF_LINE_WIDTH = 4;
+
     private static final int PLUS_POINTS = 0;
     private static final int MINUS_POINTS = 1;
     private static final int X_POINTS = 2;
-    private static final int ARROW_DOWN_POINTS = 3;
-    private static final int ARROW_LEFT_POINTS = 4;
-    private static final int ARROW_UP_POINTS = 5;
-    private static final int ARROW_RIGHT_POINTS = 6;
+    private static final int ANGLE_DOWN_POINTS = 3;
+    private static final int ANGLE_LEFT_POINTS = 4;
+    private static final int ANGLE_UP_POINTS = 5;
+    private static final int ANGLE_RIGHT_POINTS = 6;
     private static final int CHECK_POINTS = 7;
+    private static final int ARROW_DOWN_POINTS = 8;
+    private static final int ARROW_LEFT_POINTS = 9;
+    private static final int ARROW_UP_POINTS = 10;
+    private static final int ARROW_RIGHT_POINTS = 11;
+    private static final int MENU_POINTS = 12;
 
     private Paint mLinePaint;
     private Paint mBackgroundPaint;
 
-    private float[] mPoints = new float[8];
-    private float[][] mPointsDraw = new float[8][8];
+    private float[] mPoints = new float[12];
+    private float[][] mPointsDraw = new float[13][12];
     private final RectF mBounds = new RectF();
 
     private int mStrokeWidth = DEF_LINE_WIDTH;
@@ -115,11 +124,11 @@ public class TransformableDrawable extends Drawable {
         mBounds.top = bounds.top + padding - deltaY;
         mBounds.bottom = bounds.bottom - padding - deltaY;
 
-        setUpMenuLines();
+        setUpLines();
     }
 
 
-    private void setUpMenuLines(){
+    private void setUpLines(){
 
         //ABCDE
         //FGHIJ
@@ -127,88 +136,197 @@ public class TransformableDrawable extends Drawable {
         //PQRST
         //UVWXY
 
+        float centerX = mBounds.centerX();
+        float top = mBounds.top;
+        float bottom = mBounds.bottom;
+        float left = mBounds.left;
+        float centerY = mBounds.centerY();
+        float right = mBounds.right;
 
         //Plus points
-        mPointsDraw[PLUS_POINTS][0] = mBounds.centerX();
-        mPointsDraw[PLUS_POINTS][1] = mBounds.top;
-        mPointsDraw[PLUS_POINTS][2] = mBounds.centerX();
-        mPointsDraw[PLUS_POINTS][3] = mBounds.bottom;
-        mPointsDraw[PLUS_POINTS][4] = mBounds.left;
-        mPointsDraw[PLUS_POINTS][5] = mBounds.centerY();
-        mPointsDraw[PLUS_POINTS][6] = mBounds.right;
-        mPointsDraw[PLUS_POINTS][7] = mBounds.centerY();
+        mPointsDraw[PLUS_POINTS][0] = centerX;
+        mPointsDraw[PLUS_POINTS][1] = top;
+        mPointsDraw[PLUS_POINTS][2] = centerX;
+        mPointsDraw[PLUS_POINTS][3] = bottom;
+        mPointsDraw[PLUS_POINTS][4] = left;
+        mPointsDraw[PLUS_POINTS][5] = centerY;
+        mPointsDraw[PLUS_POINTS][6] = right;
+        mPointsDraw[PLUS_POINTS][7] = centerY;
+        mPointsDraw[PLUS_POINTS][8] = centerX;
+        mPointsDraw[PLUS_POINTS][9] = centerY;
+        mPointsDraw[PLUS_POINTS][10] = centerX;
+        mPointsDraw[PLUS_POINTS][11] = centerY;
 
         //Minus points
-        mPointsDraw[MINUS_POINTS][0] = mBounds.left;
-        mPointsDraw[MINUS_POINTS][1] = mBounds.centerY();
-        mPointsDraw[MINUS_POINTS][2] = mBounds.right;
-        mPointsDraw[MINUS_POINTS][3] = mBounds.centerY();
-        mPointsDraw[MINUS_POINTS][4] = mBounds.left;
-        mPointsDraw[MINUS_POINTS][5] = mBounds.centerY();
-        mPointsDraw[MINUS_POINTS][6] = mBounds.right;
-        mPointsDraw[MINUS_POINTS][7] = mBounds.centerY();
+        mPointsDraw[MINUS_POINTS][0] = left;
+        mPointsDraw[MINUS_POINTS][1] = centerY;
+        mPointsDraw[MINUS_POINTS][2] = right;
+        mPointsDraw[MINUS_POINTS][3] = centerY;
+        mPointsDraw[MINUS_POINTS][4] = left;
+        mPointsDraw[MINUS_POINTS][5] = centerY;
+        mPointsDraw[MINUS_POINTS][6] = right;
+        mPointsDraw[MINUS_POINTS][7] = centerY;
+        mPointsDraw[MINUS_POINTS][8] = centerX;
+        mPointsDraw[MINUS_POINTS][9] = centerY;
+        mPointsDraw[MINUS_POINTS][10] = centerX;
+        mPointsDraw[MINUS_POINTS][11] = centerY;
 
         //X points
-        mPointsDraw[X_POINTS][0] = mBounds.left;
-        mPointsDraw[X_POINTS][1] = mBounds.top;
-        mPointsDraw[X_POINTS][2] = mBounds.right;
-        mPointsDraw[X_POINTS][3] = mBounds.bottom;
-        mPointsDraw[X_POINTS][4] = mBounds.right;
-        mPointsDraw[X_POINTS][5] = mBounds.top;
-        mPointsDraw[X_POINTS][6] = mBounds.left;
-        mPointsDraw[X_POINTS][7] = mBounds.bottom;
+        mPointsDraw[X_POINTS][0] = left;
+        mPointsDraw[X_POINTS][1] = top;
+        mPointsDraw[X_POINTS][2] = right;
+        mPointsDraw[X_POINTS][3] = bottom;
+        mPointsDraw[X_POINTS][4] = left;
+        mPointsDraw[X_POINTS][5] = bottom;
+        mPointsDraw[X_POINTS][6] = right;
+        mPointsDraw[X_POINTS][7] = top;
+        mPointsDraw[X_POINTS][8] = centerX;
+        mPointsDraw[X_POINTS][9] = centerY;
+        mPointsDraw[X_POINTS][10] = centerX;
+        mPointsDraw[X_POINTS][11] = centerY;
+
+        //Angle down points
+        mPointsDraw[ANGLE_DOWN_POINTS][0] = left;
+        mPointsDraw[ANGLE_DOWN_POINTS][1] = centerY;
+        mPointsDraw[ANGLE_DOWN_POINTS][2] = centerX;
+        mPointsDraw[ANGLE_DOWN_POINTS][3] = bottom;
+        mPointsDraw[ANGLE_DOWN_POINTS][4] = centerX;
+        mPointsDraw[ANGLE_DOWN_POINTS][5] = bottom;
+        mPointsDraw[ANGLE_DOWN_POINTS][6] = right;
+        mPointsDraw[ANGLE_DOWN_POINTS][7] = centerY;
+        mPointsDraw[ANGLE_DOWN_POINTS][8] = centerX;
+        mPointsDraw[ANGLE_DOWN_POINTS][9] = bottom;
+        mPointsDraw[ANGLE_DOWN_POINTS][10] = centerX;
+        mPointsDraw[ANGLE_DOWN_POINTS][11] = bottom;
 
         //Arrow down points
-        mPointsDraw[ARROW_DOWN_POINTS][0] = mBounds.left;
-        mPointsDraw[ARROW_DOWN_POINTS][1] = mBounds.centerY();
-        mPointsDraw[ARROW_DOWN_POINTS][2] = mBounds.centerX();
-        mPointsDraw[ARROW_DOWN_POINTS][3] = mBounds.bottom;
-        mPointsDraw[ARROW_DOWN_POINTS][4] = mBounds.right;
-        mPointsDraw[ARROW_DOWN_POINTS][5] = mBounds.centerY();
-        mPointsDraw[ARROW_DOWN_POINTS][6] = mBounds.centerX();
-        mPointsDraw[ARROW_DOWN_POINTS][7] = mBounds.bottom;
+        mPointsDraw[ARROW_DOWN_POINTS][0] = left;
+        mPointsDraw[ARROW_DOWN_POINTS][1] = centerY;
+        mPointsDraw[ARROW_DOWN_POINTS][2] = centerX;
+        mPointsDraw[ARROW_DOWN_POINTS][3] = bottom;
+        mPointsDraw[ARROW_DOWN_POINTS][4] = centerX;
+        mPointsDraw[ARROW_DOWN_POINTS][5] = bottom;
+        mPointsDraw[ARROW_DOWN_POINTS][6] = right;
+        mPointsDraw[ARROW_DOWN_POINTS][7] = centerY;
+        mPointsDraw[ARROW_DOWN_POINTS][8] = centerX;
+        mPointsDraw[ARROW_DOWN_POINTS][9] = top;
+        mPointsDraw[ARROW_DOWN_POINTS][10] = centerX;
+        mPointsDraw[ARROW_DOWN_POINTS][11] = bottom;
+
+        //Angle up points
+        mPointsDraw[ANGLE_UP_POINTS][0] = centerX;
+        mPointsDraw[ANGLE_UP_POINTS][1] = top;
+        mPointsDraw[ANGLE_UP_POINTS][2] = right;
+        mPointsDraw[ANGLE_UP_POINTS][3] = centerY;
+        mPointsDraw[ANGLE_UP_POINTS][4] = left;
+        mPointsDraw[ANGLE_UP_POINTS][5] = centerY;
+        mPointsDraw[ANGLE_UP_POINTS][6] = centerX;
+        mPointsDraw[ANGLE_UP_POINTS][7] = top;
+        mPointsDraw[ANGLE_UP_POINTS][8] = centerX;
+        mPointsDraw[ANGLE_UP_POINTS][9] = top;
+        mPointsDraw[ANGLE_UP_POINTS][10] = centerX;
+        mPointsDraw[ANGLE_UP_POINTS][11] = top;
 
         //Arrow up points
-        mPointsDraw[ARROW_UP_POINTS][0] = mBounds.left;
-        mPointsDraw[ARROW_UP_POINTS][1] = mBounds.centerY();
-        mPointsDraw[ARROW_UP_POINTS][2] = mBounds.centerX();
-        mPointsDraw[ARROW_UP_POINTS][3] = mBounds.top;
-        mPointsDraw[ARROW_UP_POINTS][4] = mBounds.right;
-        mPointsDraw[ARROW_UP_POINTS][5] = mBounds.centerY();
-        mPointsDraw[ARROW_UP_POINTS][6] = mBounds.centerX();
-        mPointsDraw[ARROW_UP_POINTS][7] = mBounds.top;
+        mPointsDraw[ARROW_UP_POINTS][0] = centerX;
+        mPointsDraw[ARROW_UP_POINTS][1] = top;
+        mPointsDraw[ARROW_UP_POINTS][2] = right;
+        mPointsDraw[ARROW_UP_POINTS][3] = centerY;
+        mPointsDraw[ARROW_UP_POINTS][4] = left;
+        mPointsDraw[ARROW_UP_POINTS][5] = centerY;
+        mPointsDraw[ARROW_UP_POINTS][6] = centerX;
+        mPointsDraw[ARROW_UP_POINTS][7] = top;
+        mPointsDraw[ARROW_UP_POINTS][8] = centerX;
+        mPointsDraw[ARROW_UP_POINTS][9] = top;
+        mPointsDraw[ARROW_UP_POINTS][10] = centerX;
+        mPointsDraw[ARROW_UP_POINTS][11] = bottom;
+
+        //Angle left points
+        mPointsDraw[ANGLE_LEFT_POINTS][0] = left;
+        mPointsDraw[ANGLE_LEFT_POINTS][1] = centerY;
+        mPointsDraw[ANGLE_LEFT_POINTS][2] = centerX;
+        mPointsDraw[ANGLE_LEFT_POINTS][3] = bottom;
+        mPointsDraw[ANGLE_LEFT_POINTS][4] = left;
+        mPointsDraw[ANGLE_LEFT_POINTS][5] = centerY;
+        mPointsDraw[ANGLE_LEFT_POINTS][6] = centerX;
+        mPointsDraw[ANGLE_LEFT_POINTS][7] = top;
+        mPointsDraw[ANGLE_LEFT_POINTS][8] = left;
+        mPointsDraw[ANGLE_LEFT_POINTS][9] = centerY;
+        mPointsDraw[ANGLE_LEFT_POINTS][10] = left;
+        mPointsDraw[ANGLE_LEFT_POINTS][11] = centerY;
+
 
         //Arrow left points
-        mPointsDraw[ARROW_LEFT_POINTS][0] = mBounds.centerX();
-        mPointsDraw[ARROW_LEFT_POINTS][1] = mBounds.top;
-        mPointsDraw[ARROW_LEFT_POINTS][2] = mBounds.left;
-        mPointsDraw[ARROW_LEFT_POINTS][3] = mBounds.centerY();
-        mPointsDraw[ARROW_LEFT_POINTS][4] = mBounds.centerX();
-        mPointsDraw[ARROW_LEFT_POINTS][5] = mBounds.bottom;
-        mPointsDraw[ARROW_LEFT_POINTS][6] = mBounds.left;
-        mPointsDraw[ARROW_LEFT_POINTS][7] = mBounds.centerY();
+        mPointsDraw[ARROW_LEFT_POINTS][0] = left;
+        mPointsDraw[ARROW_LEFT_POINTS][1] = centerY;
+        mPointsDraw[ARROW_LEFT_POINTS][2] = centerX;
+        mPointsDraw[ARROW_LEFT_POINTS][3] = bottom;
+        mPointsDraw[ARROW_LEFT_POINTS][4] = left;
+        mPointsDraw[ARROW_LEFT_POINTS][5] = centerY;
+        mPointsDraw[ARROW_LEFT_POINTS][6] = centerX;
+        mPointsDraw[ARROW_LEFT_POINTS][7] = top;
+        mPointsDraw[ARROW_LEFT_POINTS][8] = left;
+        mPointsDraw[ARROW_LEFT_POINTS][9] = centerY;
+        mPointsDraw[ARROW_LEFT_POINTS][10] = right;
+        mPointsDraw[ARROW_LEFT_POINTS][11] = centerY;
 
+
+        //Angle right points
+        mPointsDraw[ANGLE_RIGHT_POINTS][0] = centerX;
+        mPointsDraw[ANGLE_RIGHT_POINTS][1] = top;
+        mPointsDraw[ANGLE_RIGHT_POINTS][2] = right;
+        mPointsDraw[ANGLE_RIGHT_POINTS][3] = centerY;
+        mPointsDraw[ANGLE_RIGHT_POINTS][4] = centerX;
+        mPointsDraw[ANGLE_RIGHT_POINTS][5] = bottom;
+        mPointsDraw[ANGLE_RIGHT_POINTS][6] = right;
+        mPointsDraw[ANGLE_RIGHT_POINTS][7] = centerY;
+        mPointsDraw[ANGLE_RIGHT_POINTS][8] = right;
+        mPointsDraw[ANGLE_RIGHT_POINTS][9] = centerY;
+        mPointsDraw[ANGLE_RIGHT_POINTS][10] = right;
+        mPointsDraw[ANGLE_RIGHT_POINTS][11] = centerY;
 
         //Arrow right points
-        mPointsDraw[ARROW_RIGHT_POINTS][0] = mBounds.centerX();
-        mPointsDraw[ARROW_RIGHT_POINTS][1] = mBounds.top;
-        mPointsDraw[ARROW_RIGHT_POINTS][2] = mBounds.right;
-        mPointsDraw[ARROW_RIGHT_POINTS][3] = mBounds.centerY();
-        mPointsDraw[ARROW_RIGHT_POINTS][4] = mBounds.centerX();
-        mPointsDraw[ARROW_RIGHT_POINTS][5] = mBounds.bottom;
-        mPointsDraw[ARROW_RIGHT_POINTS][6] = mBounds.right;
-        mPointsDraw[ARROW_RIGHT_POINTS][7] = mBounds.centerY();
+        mPointsDraw[ARROW_RIGHT_POINTS][0] = centerX;
+        mPointsDraw[ARROW_RIGHT_POINTS][1] = top;
+        mPointsDraw[ARROW_RIGHT_POINTS][2] = right;
+        mPointsDraw[ARROW_RIGHT_POINTS][3] = centerY;
+        mPointsDraw[ARROW_RIGHT_POINTS][4] = centerX;
+        mPointsDraw[ARROW_RIGHT_POINTS][5] = bottom;
+        mPointsDraw[ARROW_RIGHT_POINTS][6] = right;
+        mPointsDraw[ARROW_RIGHT_POINTS][7] = centerY;
+        mPointsDraw[ARROW_RIGHT_POINTS][8] = left;
+        mPointsDraw[ARROW_RIGHT_POINTS][9] = centerY;
+        mPointsDraw[ARROW_RIGHT_POINTS][10] = right;
+        mPointsDraw[ARROW_RIGHT_POINTS][11] = centerY;
 
 
         //Check points
-        mPointsDraw[CHECK_POINTS][0] = mBounds.left;
-        mPointsDraw[CHECK_POINTS][1] = mBounds.centerY();
-        mPointsDraw[CHECK_POINTS][2] = mBounds.centerX();
-        mPointsDraw[CHECK_POINTS][3] = mBounds.bottom;
-        mPointsDraw[CHECK_POINTS][4] = mBounds.right;
-        mPointsDraw[CHECK_POINTS][5] = mBounds.top;
-        mPointsDraw[CHECK_POINTS][6] = mBounds.centerX();
-        mPointsDraw[CHECK_POINTS][7] = mBounds.bottom;
+        mPointsDraw[CHECK_POINTS][0] = right;
+        mPointsDraw[CHECK_POINTS][1] = top;
+        mPointsDraw[CHECK_POINTS][2] = centerX;
+        mPointsDraw[CHECK_POINTS][3] = bottom;
+        mPointsDraw[CHECK_POINTS][4] = left;
+        mPointsDraw[CHECK_POINTS][5] = centerY;
+        mPointsDraw[CHECK_POINTS][6] = centerX;
+        mPointsDraw[CHECK_POINTS][7] = bottom;
+        mPointsDraw[CHECK_POINTS][8] = centerX;
+        mPointsDraw[CHECK_POINTS][9] = bottom;
+        mPointsDraw[CHECK_POINTS][10] = centerX;
+        mPointsDraw[CHECK_POINTS][11] = bottom;
+
+        //Check points
+        mPointsDraw[MENU_POINTS][0] = left;
+        mPointsDraw[MENU_POINTS][1] = top;
+        mPointsDraw[MENU_POINTS][2] = right;
+        mPointsDraw[MENU_POINTS][3] = top;
+        mPointsDraw[MENU_POINTS][4] = left;
+        mPointsDraw[MENU_POINTS][5] = centerY;
+        mPointsDraw[MENU_POINTS][6] = right;
+        mPointsDraw[MENU_POINTS][7] = centerY;
+        mPointsDraw[MENU_POINTS][8] = left;
+        mPointsDraw[MENU_POINTS][9] = bottom;
+        mPointsDraw[MENU_POINTS][10] = right;
+        mPointsDraw[MENU_POINTS][11] = bottom;
 
         //Transitional points
         mPoints[0] = mPointsDraw[unCheckDraw][0];
@@ -219,6 +337,10 @@ public class TransformableDrawable extends Drawable {
         mPoints[5] = mPointsDraw[unCheckDraw][5];
         mPoints[6] = mPointsDraw[unCheckDraw][6];
         mPoints[7] = mPointsDraw[unCheckDraw][7];
+        mPoints[8] = mPointsDraw[unCheckDraw][8];
+        mPoints[9] = mPointsDraw[unCheckDraw][9];
+        mPoints[10] = mPointsDraw[unCheckDraw][10];
+        mPoints[11] = mPointsDraw[unCheckDraw][11];
 
 
     }
@@ -253,6 +375,10 @@ public class TransformableDrawable extends Drawable {
 
         canvas.save();
         canvas.drawLine(x(2), y(2), x(3), y(3), mLinePaint);
+        canvas.restore();
+
+        canvas.save();
+        canvas.drawLine(x(4), y(4), x(5), y(5), mLinePaint);
         canvas.restore();
 
     }
@@ -296,6 +422,12 @@ public class TransformableDrawable extends Drawable {
     private PointProperty mPropertyPointDX = new XPointProperty(3);
     private PointProperty mPropertyPointDY = new YPointProperty(3);
 
+
+    private PointProperty mPropertyPointEX = new XPointProperty(4);
+    private PointProperty mPropertyPointEY = new YPointProperty(4);
+    private PointProperty mPropertyPointFX = new XPointProperty(5);
+    private PointProperty mPropertyPointFY = new YPointProperty(5);
+
     public Boolean isChecked() {
         return mChecked;
     }
@@ -313,7 +445,12 @@ public class TransformableDrawable extends Drawable {
                 ObjectAnimator.ofFloat(this, mPropertyPointCX, getPoint(4, enable)),
                 ObjectAnimator.ofFloat(this, mPropertyPointCY, getPoint(5, enable)),
                 ObjectAnimator.ofFloat(this, mPropertyPointDX, getPoint(6, enable)),
-                ObjectAnimator.ofFloat(this, mPropertyPointDY, getPoint(7, enable))
+                ObjectAnimator.ofFloat(this, mPropertyPointDY, getPoint(7, enable)),
+
+                ObjectAnimator.ofFloat(this, mPropertyPointEX, getPoint(8, enable)),
+                ObjectAnimator.ofFloat(this, mPropertyPointEY, getPoint(9, enable)),
+                ObjectAnimator.ofFloat(this, mPropertyPointFX, getPoint(10, enable)),
+                ObjectAnimator.ofFloat(this, mPropertyPointFY, getPoint(11, enable))
         );
         animatorSet.setDuration(animated ? ANIMATION_DURATION : 0).start();
     }

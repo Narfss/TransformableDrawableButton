@@ -6,14 +6,19 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.CompoundButton;
+
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
- * Created by fmsirvent on 13/11/14.
+ * Created by Narfss on 21/Nov/2024
  */
 public class TransformableButton extends Button {
     private TransformableDrawable transformableDrawable;
     private TransformableDrawable.BackgroundPosition backgroundPosition;
+    private OnCheckedChangeListener onCheckedChangeListener;
 
     public TransformableButton(Context context) {
         super(context);
@@ -36,6 +41,11 @@ public class TransformableButton extends Button {
         }
     }
 
+    public TransformableButton(Context context, Draw unCheckDraw, Draw checkDraw, int strokeColor, int backgroundColor, PositionDraw positionDraw) {
+        super(context);
+        setAttributes(context, unCheckDraw.getNum(), checkDraw.getNum(), strokeColor, backgroundColor, positionDraw.getNum());
+    }
+
     private void init(final Context context, AttributeSet attrs, int defStyle) {
         TypedArray arr = getContext().obtainStyledAttributes(attrs, R.styleable.TransformableButtonAttrs);
         int unCheckDraw = arr.getInt(R.styleable.TransformableButtonAttrs_unCheckDraw, 0);
@@ -44,7 +54,10 @@ public class TransformableButton extends Button {
         int backgroundColor = arr.getColor(R.styleable.TransformableButtonAttrs_backgroundColor, TransformableDrawable.DEF_BACKGROUND_COLOR);
         int drawablePosition = arr.getInt(R.styleable.TransformableButtonAttrs_drawablePosition, TransformableDrawable.BackgroundPosition.BACKGROUND.getNum());
 
+        setAttributes(context, unCheckDraw, checkDraw, strokeColor, backgroundColor, drawablePosition);
+    }
 
+    private void setAttributes(Context context, int unCheckDraw, int checkDraw, int strokeColor, int backgroundColor, int drawablePosition) {
         transformableDrawable = new TransformableDrawable(context, unCheckDraw, checkDraw, TransformableDrawable.DEF_LINE_WIDTH, strokeColor, backgroundColor);
 
         backgroundPosition = TransformableDrawable.BackgroundPosition.enumOf(drawablePosition);
@@ -89,13 +102,17 @@ public class TransformableButton extends Button {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        int min = Math.min(widthMeasureSpec, heightMeasureSpec);
-        switch (backgroundPosition) {
-            case BACKGROUND:
-                super.onMeasure(min, min);
-            default:
-                super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-                break;
+        if (isInEditMode()) {
+            super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        } else {
+            int min = Math.min(widthMeasureSpec, heightMeasureSpec);
+            switch (backgroundPosition) {
+                case BACKGROUND:
+                    super.onMeasure(min, min);
+                default:
+                    super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+                    break;
+            }
         }
     }
 
@@ -103,6 +120,90 @@ public class TransformableButton extends Button {
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_UP)
             transformableDrawable.toggle();
+        if (onCheckedChangeListener != null)
+            onCheckedChangeListener.onCheckedChanged(this, isChecked());
         return super.onTouchEvent(event);
     }
+
+    public void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener) {
+        this.onCheckedChangeListener = onCheckedChangeListener;
+    }
+
+    public Boolean isChecked() {
+        return transformableDrawable!= null && transformableDrawable.isChecked();
+    }
+
+    public void setChecked(boolean checked, boolean animated) {
+        transformableDrawable.setChecked(checked, animated);
+    }
+
+    public enum Draw {
+        PLUS,
+        MINUS,
+        X,
+        ANGLE_DOWN,
+        ANGLE_LEFT,
+        ANGLE_UP,
+        ANGLE_RIGHT,
+        CHECK,
+        ARROW_DOWN,
+        ARROW_LEFT,
+        ARROW_UP,
+        ARROW_RIGHT,
+        MENU;
+
+        public int getNum() {
+            return getDraws().indexOf(this);
+        }
+
+        private static List<Draw> getDraws() {
+            return Arrays.asList(PLUS,
+                    MINUS,
+                    X,
+                    ANGLE_DOWN,
+                    ANGLE_LEFT,
+                    ANGLE_UP,
+                    ANGLE_RIGHT,
+                    CHECK,
+                    ARROW_DOWN,
+                    ARROW_LEFT,
+                    ARROW_UP,
+                    ARROW_RIGHT,
+                    MENU);
+        }
+
+        public static Draw enumOf(int drawablePosition) {
+            return getDraws().get(drawablePosition);
+        }
+    }
+
+    public enum PositionDraw {
+        BACKGROUND,
+        LEFT,
+        TOP,
+        RIGHT,
+        BOTTOM;
+
+        public int getNum() {
+            return getDrawPositions().indexOf(this);
+        }
+
+        private static List<PositionDraw> getDrawPositions() {
+            return Arrays.asList(
+                    BACKGROUND,
+                    LEFT,
+                    TOP,
+                    RIGHT,
+                    BOTTOM);
+        }
+
+        public static PositionDraw enumOf(int drawablePosition) {
+            return getDrawPositions().get(drawablePosition);
+        }
+    }
+
+    public static interface OnCheckedChangeListener {
+        void onCheckedChanged(TransformableButton buttonView, boolean isChecked);
+    }
+
 }

@@ -4,5 +4,11 @@
     <string name="app_name">TransformableDrawableButton</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="text_intro">This app is a demo of a library.</string>
+    <string name="explain_circle">You can create easily a switch with commons symbols. </string>
+    <string name="other_symbols">Other symbols:</string>
+    <string name="common_examples">Common examples:</string>
+    <string name="button_sides">It\'s possible put the draw on a side of a button too:</string>
+    <string name="thanks_testing"><![CDATA[Thanks for try.<br/>More info at: <a href=\'https://github.com/Narfss/TransformableDrawableButton\'>https://github.com/Narfss/TransformableDrawableButton</a>]]></string>
 
 </resources>
