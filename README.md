@@ -39,7 +39,15 @@ Drawable on a side of button.
 
 ### Show me the code ###
 
+Gradle dependencies:
+
+```groovy
+compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
+```
+
 Adding widget in a layout:
+
+
 ```
 #!xml
     <!--add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
@@ -57,6 +65,7 @@ Adding widget in a layout:
 ```
 
 Creating widget programmatic way:
+
 ```
 #!java
 
