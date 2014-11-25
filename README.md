@@ -1,9 +1,9 @@
 TransformableDrawableButton
 =================
 
-This library is a extension of android's buttons widget. With this extension you can use a switchable buttons with a common draws defined, and cool animations when you switch between theme.
+This library is a extension of the android's buttons widget. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.
 
-you need more explanation?
+Do you need more explanation?
 
 Round buttons Example.
 

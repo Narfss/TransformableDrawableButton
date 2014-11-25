@@ -2,11 +2,12 @@
 <resources>
 
     <string name="app_name">TransformableDrawableButton</string>
-    <string name="text_intro">This app is a demo of a library.</string>
-    <string name="explain_circle">With this library, you can create easily switch button with commons symbols and cool animations. </string>
+    <string name="text_intro">This is a demo app of a library.</string>
+    <string name="explain_circle">Using this library, you can create switch button with commons symbols and cool animations easily. </string>
     <string name="other_symbols">Other symbols:</string>
     <string name="common_examples">Common examples:</string>
-    <string name="button_sides">It\'s possible put the draw on a side of a button too:</string>
+    <string name="button_sides">It\'s possible to put the draw on a side of a button too:</string>
     <string name="thanks_testing"><![CDATA[Thanks.<br/> Developer: <a href="http://www.fmsirvent.com">fmSirvent</a><br/>More info at: <a href=\'https://github.com/Narfss/TransformableDrawableButton\'>https://github.com/Narfss/TransformableDrawableButton</a>]]></string>
+    <string name="action_about">About</string>
 
 </resources>
