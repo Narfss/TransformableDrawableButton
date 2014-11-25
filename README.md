@@ -1,7 +1,7 @@
 TransformableDrawableButton
 =================
 
-Animated button with transitions between symbols.
+This library is a extension of android's buttons widget. With this extension you can use a switchable buttons with a common draws defined, and cool animations when you switch between theme.
 
 you need more explanation?
 
@@ -9,9 +9,15 @@ Round buttons Example.
 
 ![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_round_buttons_example.gif)
 
+
 Drawable on a side of button.
 
 ![](https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif)
+
+
+You can try the demo app on google play.
+
+http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawableButton
 
 
 ### Attributes ###
