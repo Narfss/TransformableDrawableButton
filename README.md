@@ -17,7 +17,7 @@ Drawable on a side of button.
 
 You can try the demo app on google play.
 
-http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawableButton
+https://play.google.com/store/apps/details?id=com.fmsirvent.transformabledrawablebutton.app
 
 
 ### Show me the code ###
