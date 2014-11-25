@@ -20,6 +20,40 @@ You can try the demo app on google play.
 http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawableButton
 
 
+### Show me the code ###
+
+Gradle dependencies:
+
+```groovy
+compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
+```
+
+Code in layout:
+
+```xml
+<!-- add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
+
+<com.fmsirvent.transformabledrawablebutton.TransformableButton
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_gravity="center"
+    android:layout_margin="30dp"
+    tdb:unCheckDraw="plus"
+    tdb:checkDraw="x"
+    tdb:strokeColor="@android:color/holo_red_dark"
+    tdb:backgroundColor="@android:color/black"/>
+```
+
+Creating widget programmatic way:
+
+```
+#!java
+
+        TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
+
+```
+
+
 ### Attributes ###
 * **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "plus"
 * **checkDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "minus"
@@ -27,7 +61,7 @@ http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawable
 * **backgroundColor** : Color value. Default value white.
 * **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background".
 
-<<<<<<< HEAD
+
 ### Functions ###
 * **Constructor** TransformableButton(Context context, Draw unCheckDraw, Draw checkDraw, int strokeColor, int backgroundColor, PositionDraw positionDraw)
     unCheckDraw: Draw on uncheck status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.PLUS
@@ -44,47 +78,6 @@ http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawable
     checked: Status to set (check = true, uncheck = false)
     animated: Show animation of change. (true show animation)
 
-### Show me the code ###
-
-Gradle dependencies:
-
-```groovy
-compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
-```
-
-Adding widget in a layout:
-
-
-```
-#!xml
-    <!--add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
-
-    <com.fmsirvent.transformabledrawablebutton.TransformableButton
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_margin="30dp"
-        tdb:unCheckDraw="plus"
-        tdb:checkDraw="x"
-        tdb:strokeColor="@android:color/holo_red_dark"
-        tdb:backgroundColor="@android:color/black"/>
-
-```
-=======
-### TODO ###
-* Check function
-* Check listener
-* Improve animations.
->>>>>>> 83278ae546cfeb2cec66ff629755b16626b660db
-
-Creating widget programmatic way:
-
-```
-#!java
-
-        TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
-
-```
 
 ## Author
 
