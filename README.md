@@ -27,6 +27,7 @@ http://play.google.com/store/apps/details?id=com.fmsirvent.TransformableDrawable
 * **backgroundColor** : Color value. Default value white.
 * **drawablePosition** : Values "background", "left", "top", "right", "bottom". Default value "background".
 
+<<<<<<< HEAD
 ### Functions ###
 * **Constructor** TransformableButton(Context context, Draw unCheckDraw, Draw checkDraw, int strokeColor, int backgroundColor, PositionDraw positionDraw)
     unCheckDraw: Draw on uncheck status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.PLUS
@@ -69,6 +70,12 @@ Adding widget in a layout:
         tdb:backgroundColor="@android:color/black"/>
 
 ```
+=======
+### TODO ###
+* Check function
+* Check listener
+* Improve animations.
+>>>>>>> 83278ae546cfeb2cec66ff629755b16626b660db
 
 Creating widget programmatic way:
 
