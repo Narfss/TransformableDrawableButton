@@ -46,8 +46,7 @@ Code in layout:
 
 Creating widget programmatic way:
 
-```
-#!java
+```java
 
         TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
 
