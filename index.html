@@ -3,47 +3,39 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Transformabledrawablebutton by Narfss</title>
+    <title>Transformable Drawable Button by Narfss</title>
+
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
+    <script src="javascripts/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/Narfss/TransformableDrawableButton">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/Narfss/TransformableDrawableButton/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/Narfss/TransformableDrawableButton/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
-
     <div class="wrapper">
+      <header>
+        <h1 class="header">Transformable Drawable Button</h1>
+        <p class="header">Interactive button with common symbols</p>
 
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/Narfss/TransformableDrawableButton/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/Narfss/TransformableDrawableButton/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/Narfss/TransformableDrawableButton">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/Narfss">Narfss</a></p>
+
+
+      </header>
       <section>
-        <div id="title">
-          <h1>Transformabledrawablebutton</h1>
-          <p>Interactive left menu button</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/Narfss">Narfss</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
         <h1>
 <a id="transformabledrawablebutton" class="anchor" href="#transformabledrawablebutton" aria-hidden="true"><span class="octicon octicon-link"></span></a>TransformableDrawableButton</h1>
 
-<p>Animated button with transitions between symbols.</p>
+<p>This library is a extension of the android's buttons widget. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.</p>
 
-<p>you need more explanation?</p>
+<p>Do you need more explanation?</p>
 
 <p>Round buttons Example.</p>
 
@@ -53,35 +45,45 @@
 
 <p><img src="https://raw.githubusercontent.com/Narfss/TransformableDrawableButton/master/draw_sides_buttons_example.gif" alt=""></p>
 
+<p>You can try the demo app on google play.</p>
+
+<p><a href="https://play.google.com/store/apps/details?id=com.fmsirvent.transformabledrawablebutton.app">https://play.google.com/store/apps/details?id=com.fmsirvent.transformabledrawablebutton.app</a></p>
+
 <h3>
 <a id="show-me-the-code" class="anchor" href="#show-me-the-code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show me the code</h3>
 
 <p>Gradle dependencies:</p>
 
-<div class="highlight highlight-groovy"><pre>compile <span class="pl-s1"><span class="pl-pds">'</span>com.fmsirvent:transformabledrawablebutton:1.0.0<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-groovy"><pre>compile <span class="pl-s1"><span class="pl-pds">'</span>com.fmsirvent:transformabledrawablebutton:1.1.0<span class="pl-pds">'</span></span></pre></div>
 
 <p>Code in layout:</p>
 
-<div class="highlight highlight-xml"><pre><span class="pl-c"><span class="pl-pdc">&lt;!--</span> add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" <span class="pl-pdc">--&gt;</span></span>
+<div class="highlight highlight-xml"><pre><span class="pl-c">&lt;!-- add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" --&gt;</span>
 
 &lt;<span class="pl-ent">com</span>.fmsirvent.transformabledrawablebutton.TransformableButton
-    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_width</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_height</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_gravity</span>=<span class="pl-s1"><span class="pl-pds">"</span>center<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">android</span><span class="pl-eoa">:</span><span class="pl-eoa">layout_margin</span>=<span class="pl-s1"><span class="pl-pds">"</span>30dp<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">unCheckDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>plus<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">checkDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">strokeColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/holo_red_dark<span class="pl-pds">"</span></span>
-    <span class="pl-eoa">tdb</span><span class="pl-eoa">:</span><span class="pl-eoa">backgroundColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/black<span class="pl-pds">"</span></span>/&gt;</pre></div>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_height</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_gravity</span>=<span class="pl-s1"><span class="pl-pds">"</span>center<span class="pl-pds">"</span></span>
+    <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_margin</span>=<span class="pl-s1"><span class="pl-pds">"</span>30dp<span class="pl-pds">"</span></span>
+    <span class="pl-e">tdb</span><span class="pl-e">:</span><span class="pl-e">unCheckDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>plus<span class="pl-pds">"</span></span>
+    <span class="pl-e">tdb</span><span class="pl-e">:</span><span class="pl-e">checkDraw</span>=<span class="pl-s1"><span class="pl-pds">"</span>x<span class="pl-pds">"</span></span>
+    <span class="pl-e">tdb</span><span class="pl-e">:</span><span class="pl-e">strokeColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/holo_red_dark<span class="pl-pds">"</span></span>
+    <span class="pl-e">tdb</span><span class="pl-e">:</span><span class="pl-e">backgroundColor</span>=<span class="pl-s1"><span class="pl-pds">"</span>@android:color/black<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p>Creating widget programmatic way:</p>
+
+<div class="highlight highlight-java"><pre>
+        <span class="pl-stj">TransformableButton</span> transformableButton <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">TransformableButton</span>(<span class="pl-v">this</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>MINUS</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>PLUS</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>BLACK</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>GRAY</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">PositionDraw</span><span class="pl-c1"><span class="pl-k">.</span>BACKGROUND</span>);
+</pre></div>
 
 <h3>
 <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
 
 <ul>
 <li>
-<strong>unCheckDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "plus"</li>
+<strong>unCheckDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "plus"</li>
 <li>
-<strong>checkDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check". Default value "minus"</li>
+<strong>checkDraw</strong> : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "minus"</li>
 <li>
 <strong>strokeColor</strong> : Color value. Default value dark gray.</li>
 <li>
@@ -91,12 +93,27 @@
 </ul>
 
 <h3>
-<a id="todo" class="anchor" href="#todo" aria-hidden="true"><span class="octicon octicon-link"></span></a>TODO</h3>
+<a id="functions" class="anchor" href="#functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Functions</h3>
 
 <ul>
-<li>Check function</li>
-<li>Check listener</li>
-<li>Improve animations.</li>
+<li>
+<strong>Constructor</strong> TransformableButton(Context context, Draw unCheckDraw, Draw checkDraw, int strokeColor, int backgroundColor, PositionDraw positionDraw)
+unCheckDraw: Draw on uncheck status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.PLUS
+strokeColor: Draw on check status. Use Enum TransformableButton.Draw. Example: TransformableButton.Draw.MINUS
+backgroundColor: Color of circle background. Example Color.RED
+positionDraw: Color of lines. Example Color.RED</li>
+<li>
+<strong>setOnCheckedChangeListener</strong> void setOnCheckedChangeListener(OnCheckedChangeListener onCheckedChangeListener)
+onCheckedChangeListener: Listener of status changes, use TransformableButton.OnCheckedChangeListener.</li>
+<li>
+<strong>isChecked</strong> Boolean isChecked()
+Check the status button.
+return: status of button (check = true, uncheck = false).</li>
+<li>
+<strong>setChecked</strong> void setChecked(boolean checked, boolean animated)
+Changes the status button.
+checked: Status to set (check = true, uncheck = false)
+animated: Show animation of change. (true show animation)</li>
 </ul>
 
 <h2>
@@ -114,10 +131,12 @@ Linkedin: <a href="https://www.linkedin.com/profile/view?id=93515047">https://ww
 
 <p>TransformableDrawableButton is available under the MIT license. See the LICENSE file for more info.</p>
       </section>
-
+      <footer>
+        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
+		          <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
