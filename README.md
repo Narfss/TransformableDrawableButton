@@ -1,7 +1,7 @@
 TransformableDrawableButton
 =================
 
-This library is a extension of the android's buttons widget. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.
+This library is a extension of the android's buttons. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.
 
 Do you need more explanation?
 
@@ -31,7 +31,7 @@ compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
 Code in layout:
 
 ```xml
-<!-- add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
+<!-- add on top parent layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" -->
 
 <com.fmsirvent.transformabledrawablebutton.TransformableButton
     android:layout_width="60dp"
@@ -48,7 +48,7 @@ Creating widget programmatic way:
 
 ```java
 
-        TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
+TransformableButton transformableButton = new TransformableButton(this, TransformableButton.Draw.MINUS, TransformableButton.Draw.PLUS, Color.BLACK, Color.GRAY, TransformableButton.PositionDraw.BACKGROUND);
 
 ```
 
