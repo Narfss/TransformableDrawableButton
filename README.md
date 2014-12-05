@@ -28,12 +28,6 @@ Gradle dependencies:
 compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
 ```
 
-Proguard:
-
-```
--dontwarn com.fmsirvent.ParallaxEverywhere.**
-```
-
 Code in layout:
 
 ```xml
@@ -58,6 +52,11 @@ TransformableButton transformableButton = new TransformableButton(this, Transfor
 
 ```
 
+Proguard:
+
+```
+-dontwarn com.fmsirvent.transformabledrawablebutton.**
+```
 
 ### Attributes ###
 * **unCheckDraw** : Values "plus", "minus", "x", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "check", "arrow_down", "arrow_left", "arrow_up", "arrow_right", "menu". Default value "plus"
