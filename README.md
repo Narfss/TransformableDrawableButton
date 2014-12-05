@@ -31,7 +31,6 @@ compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
 Proguard:
 
 ```
-#ParallaxEverywhere
 -dontwarn com.fmsirvent.ParallaxEverywhere.**
 ```
 
