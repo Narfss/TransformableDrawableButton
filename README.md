@@ -28,7 +28,7 @@ https://play.google.com/store/apps/details?id=com.fmsirvent.transformabledrawabl
 Gradle dependencies:
 
 ```groovy
-compile 'com.fmsirvent:transformabledrawablebutton:1.1.0'
+compile 'com.fmsirvent:transformabledrawablebutton:1.1.1'
 ```
 
 Code in layout:

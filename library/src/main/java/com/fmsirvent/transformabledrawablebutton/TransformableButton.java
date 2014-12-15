@@ -2,6 +2,7 @@ package com.fmsirvent.transformabledrawablebutton;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.ViewTreeObserver;
@@ -18,7 +19,8 @@ import java.util.List;
 public class TransformableButton extends Button {
     private TransformableDrawable transformableDrawable;
     private TransformableDrawable.BackgroundPosition backgroundPosition;
-    private OnCheckedChangeListener onCheckedChangeListener;
+    private OnCheckedChangeListener onCheckedChangeListener = null;
+    private ViewTreeObserver.OnGlobalLayoutListener onGlobalLayoutListener = null;
 
     public TransformableButton(Context context) {
         super(context);
@@ -63,7 +65,13 @@ public class TransformableButton extends Button {
         backgroundPosition = TransformableDrawable.BackgroundPosition.enumOf(drawablePosition);
 
         transformableDrawable.setPositionDrawable(backgroundPosition);
-        getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        onGlobalLayoutListener = new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 int height = getHeight();
@@ -80,24 +88,36 @@ public class TransformableButton extends Button {
                         }
                         break;
                     case LEFT:
-                        transformableDrawable.setBounds(min, min/2, min*2, min*3/2);
+                        transformableDrawable.setBounds(min, min / 2, min * 2, min * 3 / 2);
                         setCompoundDrawables(transformableDrawable, null, null, null);
                         break;
                     case TOP:
-                        transformableDrawable.setBounds((width-min)/2, min, ((width-min)/2) + min,  min*2);
+                        transformableDrawable.setBounds((width - min) / 2, min, ((width - min) / 2) + min, min * 2);
                         setCompoundDrawables(null, transformableDrawable, null, null);
                         break;
                     case RIGHT:
-                        transformableDrawable.setBounds(0, min/2, min, min*3/2);
+                        transformableDrawable.setBounds(0, min / 2, min, min * 3 / 2);
                         setCompoundDrawables(null, null, transformableDrawable, null);
                         break;
                     case BOTTOM:
-                        transformableDrawable.setBounds((width-min)/2, (height) / 2 - min, ((width-min)/2) + min,  (height / 2) - min + min);
+                        transformableDrawable.setBounds((width - min) / 2, (height) / 2 - min, ((width - min) / 2) + min, (height / 2) - min + min);
                         setCompoundDrawables(null, null, null, transformableDrawable);
                         break;
                 }
             }
-        });
+        };
+        getViewTreeObserver().addOnGlobalLayoutListener(onGlobalLayoutListener);
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        ViewTreeObserver viewTreeObserver = getViewTreeObserver();
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            viewTreeObserver.removeOnGlobalLayoutListener(onGlobalLayoutListener);
+        } else {
+            viewTreeObserver.removeGlobalOnLayoutListener(onGlobalLayoutListener);
+        }
+        super.onDetachedFromWindow();
     }
 
     @Override
