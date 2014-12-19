@@ -1,39 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
+
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Transformable Drawable Button by Narfss</title>
+    <meta name="description" content="Transformable Drawable Button : Interactive button with common symbols">
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Transformable Drawable Button</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Transformable Drawable Button</h1>
-        <p class="header">Interactive button with common symbols</p>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/Narfss/TransformableDrawableButton/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/Narfss/TransformableDrawableButton/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/Narfss/TransformableDrawableButton">View On GitHub</a></li>
-        </ul>
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/Narfss/TransformableDrawableButton">View on GitHub</a>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/Narfss">Narfss</a></p>
+          <h1 id="project_title">Transformable Drawable Button</h1>
+          <h2 id="project_tagline">Interactive button with common symbols</h2>
 
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/Narfss/TransformableDrawableButton/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/Narfss/TransformableDrawableButton/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-      </header>
-      <section>
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
         <h1>
 <a id="transformabledrawablebutton" class="anchor" href="#transformabledrawablebutton" aria-hidden="true"><span class="octicon octicon-link"></span></a>TransformableDrawableButton</h1>
 
-<p>This library is a extension of the android's buttons widget. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.</p>
+<p><a href="https://android-arsenal.com/details/1/1190"><img src="https://img.shields.io/badge/Android%20Arsenal-TransformableDrawableButton-brightgreen.svg?style=flat" alt="Android Arsenal"></a></p>
+
+<p>This library is a extension of the android's buttons. Using this extension you can add a switchable buttons with a common draws defined, and cool animations when you switch between them.</p>
 
 <p>Do you need more explanation?</p>
 
@@ -54,11 +57,11 @@
 
 <p>Gradle dependencies:</p>
 
-<div class="highlight highlight-groovy"><pre>compile <span class="pl-s1"><span class="pl-pds">'</span>com.fmsirvent:transformabledrawablebutton:1.1.0<span class="pl-pds">'</span></span></pre></div>
+<div class="highlight highlight-groovy"><pre>compile <span class="pl-s1"><span class="pl-pds">'</span>com.fmsirvent:transformabledrawablebutton:1.1.1<span class="pl-pds">'</span></span></pre></div>
 
 <p>Code in layout:</p>
 
-<div class="highlight highlight-xml"><pre><span class="pl-c">&lt;!-- add on fathers layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" --&gt;</span>
+<div class="highlight highlight-xml"><pre><span class="pl-c">&lt;!-- add on top parent layout: xmlns:tdb="http://schemas.android.com/apk/res-auto" --&gt;</span>
 
 &lt;<span class="pl-ent">com</span>.fmsirvent.transformabledrawablebutton.TransformableButton
     <span class="pl-e">android</span><span class="pl-e">:</span><span class="pl-e">layout_width</span>=<span class="pl-s1"><span class="pl-pds">"</span>60dp<span class="pl-pds">"</span></span>
@@ -73,8 +76,13 @@
 <p>Creating widget programmatic way:</p>
 
 <div class="highlight highlight-java"><pre>
-        <span class="pl-stj">TransformableButton</span> transformableButton <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">TransformableButton</span>(<span class="pl-v">this</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>MINUS</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>PLUS</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>BLACK</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>GRAY</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">PositionDraw</span><span class="pl-c1"><span class="pl-k">.</span>BACKGROUND</span>);
+<span class="pl-stj">TransformableButton</span> transformableButton <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-stj">TransformableButton</span>(<span class="pl-v">this</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>MINUS</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">Draw</span><span class="pl-c1"><span class="pl-k">.</span>PLUS</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>BLACK</span>, <span class="pl-stj">Color</span><span class="pl-c1"><span class="pl-k">.</span>GRAY</span>, <span class="pl-stj">TransformableButton</span><span class="pl-k">.</span><span class="pl-stj">PositionDraw</span><span class="pl-c1"><span class="pl-k">.</span>BACKGROUND</span>);
 </pre></div>
+
+<p>Proguard:</p>
+
+<pre><code>-dontwarn com.fmsirvent.transformabledrawablebutton.**
+</code></pre>
 
 <h3>
 <a id="attributes" class="anchor" href="#attributes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attributes</h3>
@@ -131,12 +139,17 @@ Linkedin: <a href="https://www.linkedin.com/profile/view?id=93515047">https://ww
 
 <p>TransformableDrawableButton is available under the MIT license. See the LICENSE file for more info.</p>
       </section>
-      <footer>
-        <p><small>Hosted on <a href="http://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Transformable Drawable Button maintained by <a href="https://github.com/Narfss">Narfss</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
+
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -146,6 +159,7 @@ Linkedin: <a href="https://www.linkedin.com/profile/view?id=93515047">https://ww
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+
 
   </body>
 </html>
